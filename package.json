@@ -1,5 +1,6 @@
 {
   "name": "cdk-code-server",
+  "description": "CDK Construct for a VSCode Server development environment on EC2",
   "repository": {
     "type": "git",
     "url": "https://github.com/badmintoncryer/cdk-code-server.git"
@@ -17,6 +18,7 @@
     "package": "npx projen package",
     "package-all": "npx projen package-all",
     "package:js": "npx projen package:js",
+    "package:python": "npx projen package:python",
     "post-compile": "npx projen post-compile",
     "post-upgrade": "npx projen post-upgrade",
     "pre-compile": "npx projen pre-compile",
@@ -34,11 +36,13 @@
     "organization": false
   },
   "devDependencies": {
+    "@aws-cdk/integ-runner": "2.120.0-alpha.0",
+    "@aws-cdk/integ-tests-alpha": "2.120.0-alpha.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^18",
     "@typescript-eslint/eslint-plugin": "^7",
     "@typescript-eslint/parser": "^7",
-    "aws-cdk-lib": "2.1.0",
+    "aws-cdk-lib": "2.120.0",
     "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-typescript": "^3.6.1",
@@ -57,11 +61,20 @@
     "typescript": "^5.5.4"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.1.0",
+    "aws-cdk-lib": "^2.120.0",
     "constructs": "^10.0.5"
   },
+  "dependencies": {
+    "@open-constructs/aws-cdk": "^0.0.0",
+    "cdk-preinstalled-amazon-linux-ec2": "^0.0.9"
+  },
   "keywords": [
-    "cdk"
+    "aws",
+    "aws-cdk",
+    "cdk",
+    "ec2",
+    "nodejs",
+    "vscode"
   ],
   "main": "lib/index.js",
   "license": "Apache-2.0",
@@ -118,7 +131,12 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "python": {
+        "distName": "cdk-code-server",
+        "module": "cdk_code-server"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
