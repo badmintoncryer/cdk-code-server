@@ -113,4 +113,3 @@ At this point, the GitHub authentication screen may appear again, so press Autho
 Once you open the terminal, you’re all set.
 
 ![VSCode](./images/vscode.png)
-

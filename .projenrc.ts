@@ -12,7 +12,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   gitignore: ['*.js', '*.d.ts', '!test/.*.snapshot/**/*', '.tmp'],
 
   deps: [
-    '@open-constructs/aws-cdk',
+    '@open-constructs/aws-cdk@0.0.0',
     'cdk-preinstalled-amazon-linux-ec2',
   ],
   description: 'CDK Construct for a VSCode Server development environment on EC2',

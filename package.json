@@ -65,7 +65,7 @@
     "constructs": "^10.0.5"
   },
   "dependencies": {
-    "@open-constructs/aws-cdk": "^0.0.0",
+    "@open-constructs/aws-cdk": "0.0.0",
     "cdk-preinstalled-amazon-linux-ec2": "^0.0.9"
   },
   "keywords": [
