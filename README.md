@@ -13,7 +13,7 @@ You can access to Visual Studio Code server by browser and start development eas
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![npm downloads](https://img.shields.io/npm/dm/cdk-code-server.svg?style=flat)](https://www.npmjs.com/package/cdk-code-server)
 
-![CDK VSCode Server Construct](./images/cdk-code-server.png)
+![CDK VSCode Server Construct](./images/code-server.png)
 
 ## Usage
 
