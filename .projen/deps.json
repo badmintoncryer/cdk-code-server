@@ -2,12 +2,12 @@
   "dependencies": [
     {
       "name": "@aws-cdk/integ-runner",
-      "version": "2.120.0-alpha.0",
+      "version": "2.143.0-alpha.0",
       "type": "build"
     },
     {
       "name": "@aws-cdk/integ-tests-alpha",
-      "version": "2.120.0-alpha.0",
+      "version": "2.143.0-alpha.0",
       "type": "build"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
       "name": "aws-cdk-lib",
-      "version": "^2.120.0",
+      "version": "^2.143.0",
       "type": "peer"
     },
     {
@@ -106,11 +106,15 @@
     },
     {
       "name": "@open-constructs/aws-cdk",
-      "version": "0.0.0",
       "type": "runtime"
     },
     {
       "name": "cdk-preinstalled-amazon-linux-ec2",
+      "type": "runtime"
+    },
+    {
+      "name": "constructs",
+      "version": "10.3.0",
       "type": "runtime"
     }
   ],
