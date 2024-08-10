@@ -1,0 +1,227 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "testStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "testStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "testStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "testStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/359b6db38665c0672fc6a912dc86043b0718d993972bfdd6e7ca1fda2b57ff6b.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "testStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "testStack.assets"
+      ],
+      "metadata": {
+        "/testStack/CodeServer/Vpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerVpc314E0FBC"
+          }
+        ],
+        "/testStack/CodeServer/Vpc/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerVpcPublicSubnet1SubnetCBAE8E50"
+          }
+        ],
+        "/testStack/CodeServer/Vpc/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerVpcPublicSubnet1RouteTable89646AA1"
+          }
+        ],
+        "/testStack/CodeServer/Vpc/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerVpcPublicSubnet1RouteTableAssociation54614DF2"
+          }
+        ],
+        "/testStack/CodeServer/Vpc/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerVpcPublicSubnet1DefaultRoute53F8C880"
+          }
+        ],
+        "/testStack/CodeServer/Vpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerVpcIGW8B4181BF"
+          }
+        ],
+        "/testStack/CodeServer/Vpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerVpcVPCGW769557AA"
+          }
+        ],
+        "/testStack/CodeServer/Vpc/RestrictDefaultSecurityGroupCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerVpcRestrictDefaultSecurityGroupCustomResourceF555C1C5"
+          }
+        ],
+        "/testStack/CodeServer/Instance/InstanceSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerInstanceInstanceSecurityGroup0BB80B50"
+          }
+        ],
+        "/testStack/CodeServer/Instance/InstanceSecurityGroup/from testStackCodeServerInstanceConnectEndpointSecurityGroupD91462D8:22": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerInstanceInstanceSecurityGroupfromtestStackCodeServerInstanceConnectEndpointSecurityGroupD91462D8222BE456A9"
+          }
+        ],
+        "/testStack/CodeServer/Instance/InstanceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerInstanceInstanceRoleD5187C90"
+          }
+        ],
+        "/testStack/CodeServer/Instance/InstanceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerInstanceInstanceRoleDefaultPolicy3A5A840C"
+          }
+        ],
+        "/testStack/CodeServer/Instance/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerInstanceInstanceProfileAD49C0B1"
+          }
+        ],
+        "/testStack/CodeServer/Instance/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerInstanceE7884176"
+          }
+        ],
+        "/testStack/CodeServer/InstanceConnectEndpoint/SecurityGroup": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "Ignoring Egress rule since 'allowAllOutbound' is set to true; To add customized rules, set allowAllOutbound=false on the SecurityGroup [ack: @aws-cdk/aws-ec2:ipv4IgnoreEgressRule]"
+          }
+        ],
+        "/testStack/CodeServer/InstanceConnectEndpoint/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerInstanceConnectEndpointSecurityGroupB1118A4F"
+          }
+        ],
+        "/testStack/CodeServer/InstanceConnectEndpoint/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerInstanceConnectEndpoint69CDE36D"
+          }
+        ],
+        "/testStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+          }
+        ],
+        "/testStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E"
+          }
+        ],
+        "/testStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61arm64C96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/testStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/testStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "testStack"
+    },
+    "TestDefaultTestDeployAssert12909640.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "TestDefaultTestDeployAssert12909640.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "TestDefaultTestDeployAssert12909640": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "TestDefaultTestDeployAssert12909640.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/21fbb51d7b23f6a6c262b46a9caee79d744a3ac019fd45422d988b96d44b2a22.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "TestDefaultTestDeployAssert12909640.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "TestDefaultTestDeployAssert12909640.assets"
+      ],
+      "metadata": {
+        "/Test/DefaultTest/DeployAssert/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/Test/DefaultTest/DeployAssert/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "Test/DefaultTest/DeployAssert"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

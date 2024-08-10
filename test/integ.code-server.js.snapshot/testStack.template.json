@@ -1,0 +1,464 @@
+{
+ "Resources": {
+  "CodeServerVpc314E0FBC": {
+   "Type": "AWS::EC2::VPC",
+   "Properties": {
+    "CidrBlock": "10.0.0.0/16",
+    "EnableDnsHostnames": true,
+    "EnableDnsSupport": true,
+    "InstanceTenancy": "default",
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "testStack/CodeServer/Vpc"
+     }
+    ]
+   }
+  },
+  "CodeServerVpcPublicSubnet1SubnetCBAE8E50": {
+   "Type": "AWS::EC2::Subnet",
+   "Properties": {
+    "AvailabilityZone": {
+     "Fn::Select": [
+      0,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "CidrBlock": "10.0.0.0/26",
+    "MapPublicIpOnLaunch": true,
+    "Tags": [
+     {
+      "Key": "aws-cdk:subnet-name",
+      "Value": "Public"
+     },
+     {
+      "Key": "aws-cdk:subnet-type",
+      "Value": "Public"
+     },
+     {
+      "Key": "Name",
+      "Value": "testStack/CodeServer/Vpc/PublicSubnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "CodeServerVpc314E0FBC"
+    }
+   }
+  },
+  "CodeServerVpcPublicSubnet1RouteTable89646AA1": {
+   "Type": "AWS::EC2::RouteTable",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "testStack/CodeServer/Vpc/PublicSubnet1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "CodeServerVpc314E0FBC"
+    }
+   }
+  },
+  "CodeServerVpcPublicSubnet1RouteTableAssociation54614DF2": {
+   "Type": "AWS::EC2::SubnetRouteTableAssociation",
+   "Properties": {
+    "RouteTableId": {
+     "Ref": "CodeServerVpcPublicSubnet1RouteTable89646AA1"
+    },
+    "SubnetId": {
+     "Ref": "CodeServerVpcPublicSubnet1SubnetCBAE8E50"
+    }
+   }
+  },
+  "CodeServerVpcPublicSubnet1DefaultRoute53F8C880": {
+   "Type": "AWS::EC2::Route",
+   "Properties": {
+    "DestinationCidrBlock": "0.0.0.0/0",
+    "GatewayId": {
+     "Ref": "CodeServerVpcIGW8B4181BF"
+    },
+    "RouteTableId": {
+     "Ref": "CodeServerVpcPublicSubnet1RouteTable89646AA1"
+    }
+   },
+   "DependsOn": [
+    "CodeServerVpcVPCGW769557AA"
+   ]
+  },
+  "CodeServerVpcIGW8B4181BF": {
+   "Type": "AWS::EC2::InternetGateway",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "testStack/CodeServer/Vpc"
+     }
+    ]
+   }
+  },
+  "CodeServerVpcVPCGW769557AA": {
+   "Type": "AWS::EC2::VPCGatewayAttachment",
+   "Properties": {
+    "InternetGatewayId": {
+     "Ref": "CodeServerVpcIGW8B4181BF"
+    },
+    "VpcId": {
+     "Ref": "CodeServerVpc314E0FBC"
+    }
+   }
+  },
+  "CodeServerVpcRestrictDefaultSecurityGroupCustomResourceF555C1C5": {
+   "Type": "Custom::VpcRestrictDefaultSG",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E",
+      "Arn"
+     ]
+    },
+    "DefaultSecurityGroupId": {
+     "Fn::GetAtt": [
+      "CodeServerVpc314E0FBC",
+      "DefaultSecurityGroup"
+     ]
+    },
+    "Account": {
+     "Ref": "AWS::AccountId"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete"
+  },
+  "CodeServerInstanceInstanceSecurityGroup0BB80B50": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "testStack/CodeServer/Instance/InstanceSecurityGroup",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "testStack/CodeServer/Instance"
+     }
+    ],
+    "VpcId": {
+     "Ref": "CodeServerVpc314E0FBC"
+    }
+   }
+  },
+  "CodeServerInstanceInstanceSecurityGroupfromtestStackCodeServerInstanceConnectEndpointSecurityGroupD91462D8222BE456A9": {
+   "Type": "AWS::EC2::SecurityGroupIngress",
+   "Properties": {
+    "Description": "from testStackCodeServerInstanceConnectEndpointSecurityGroupD91462D8:22",
+    "FromPort": 22,
+    "GroupId": {
+     "Fn::GetAtt": [
+      "CodeServerInstanceInstanceSecurityGroup0BB80B50",
+      "GroupId"
+     ]
+    },
+    "IpProtocol": "tcp",
+    "SourceSecurityGroupId": {
+     "Fn::GetAtt": [
+      "CodeServerInstanceConnectEndpointSecurityGroupB1118A4F",
+      "GroupId"
+     ]
+    },
+    "ToPort": 22
+   }
+  },
+  "CodeServerInstanceInstanceRoleD5187C90": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "ec2.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/AmazonSSMManagedInstanceCore"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "testStack/CodeServer/Instance"
+     }
+    ]
+   }
+  },
+  "CodeServerInstanceInstanceRoleDefaultPolicy3A5A840C": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "*",
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "CodeServerInstanceInstanceRoleDefaultPolicy3A5A840C",
+    "Roles": [
+     {
+      "Ref": "CodeServerInstanceInstanceRoleD5187C90"
+     }
+    ]
+   }
+  },
+  "CodeServerInstanceInstanceProfileAD49C0B1": {
+   "Type": "AWS::IAM::InstanceProfile",
+   "Properties": {
+    "Roles": [
+     {
+      "Ref": "CodeServerInstanceInstanceRoleD5187C90"
+     }
+    ]
+   }
+  },
+  "CodeServerInstanceE7884176": {
+   "Type": "AWS::EC2::Instance",
+   "Properties": {
+    "AvailabilityZone": {
+     "Fn::Select": [
+      0,
+      {
+       "Fn::GetAZs": ""
+      }
+     ]
+    },
+    "BlockDeviceMappings": [
+     {
+      "DeviceName": "/dev/xvda",
+      "Ebs": {
+       "DeleteOnTermination": true,
+       "Encrypted": false,
+       "VolumeSize": 30
+      }
+     }
+    ],
+    "IamInstanceProfile": {
+     "Ref": "CodeServerInstanceInstanceProfileAD49C0B1"
+    },
+    "ImageId": {
+     "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61arm64C96584B6F00A464EAD1953AFF4B05118Parameter"
+    },
+    "InstanceType": "c7g.2xlarge",
+    "SecurityGroupIds": [
+     {
+      "Fn::GetAtt": [
+       "CodeServerInstanceInstanceSecurityGroup0BB80B50",
+       "GroupId"
+      ]
+     }
+    ],
+    "SubnetId": {
+     "Ref": "CodeServerVpcPublicSubnet1SubnetCBAE8E50"
+    },
+    "Tags": [
+     {
+      "Key": "Name",
+      "Value": "testStack/CodeServer/Instance"
+     }
+    ],
+    "UserData": {
+     "Fn::Base64": "#!/bin/bash\nsudo dnf update -y\ntouch ~/.bashrc\ncurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash\nsource ~/.bashrc\nexport NVM_DIR=\"$HOME/.nvm\"\n[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"\nnvm install --lts\ncat <<EOF >> /home/ec2-user/.bashrc\nexport NVM_DIR=\"/.nvm\"\n[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"\nEOF\nsudo rpm --import https://packages.microsoft.com/keys/microsoft.asc\necho -e \"[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc\" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null\nsudo dnf check-update\nsudo dnf install -y code\nsudo dnf install -y git\nnpm install -g yarn\nsudo dnf groupinstall -y 'Development Tools'\necho 'export NODE_OPTIONS=--max-old-space-size=8192' >> /etc/profile.d/myenv.sh\nchmod +x /etc/profile.d/myenv.sh\nsudo loginctl enable-linger ec2-user"
+    }
+   },
+   "DependsOn": [
+    "CodeServerInstanceInstanceRoleDefaultPolicy3A5A840C",
+    "CodeServerInstanceInstanceRoleD5187C90"
+   ]
+  },
+  "CodeServerInstanceConnectEndpointSecurityGroupB1118A4F": {
+   "Type": "AWS::EC2::SecurityGroup",
+   "Properties": {
+    "GroupDescription": "testStack/CodeServer/InstanceConnectEndpoint/SecurityGroup",
+    "SecurityGroupEgress": [
+     {
+      "CidrIp": "0.0.0.0/0",
+      "Description": "Allow all outbound traffic by default",
+      "IpProtocol": "-1"
+     }
+    ],
+    "VpcId": {
+     "Ref": "CodeServerVpc314E0FBC"
+    }
+   }
+  },
+  "CodeServerInstanceConnectEndpoint69CDE36D": {
+   "Type": "AWS::EC2::InstanceConnectEndpoint",
+   "Properties": {
+    "SecurityGroupIds": [
+     {
+      "Fn::GetAtt": [
+       "CodeServerInstanceConnectEndpointSecurityGroupB1118A4F",
+       "GroupId"
+      ]
+     }
+    ],
+    "SubnetId": {
+     "Ref": "CodeServerVpcPublicSubnet1SubnetCBAE8E50"
+    }
+   }
+  },
+  "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Version": "2012-10-17",
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ]
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+     }
+    ],
+    "Policies": [
+     {
+      "PolicyName": "Inline",
+      "PolicyDocument": {
+       "Version": "2012-10-17",
+       "Statement": [
+        {
+         "Effect": "Allow",
+         "Action": [
+          "ec2:AuthorizeSecurityGroupIngress",
+          "ec2:AuthorizeSecurityGroupEgress",
+          "ec2:RevokeSecurityGroupIngress",
+          "ec2:RevokeSecurityGroupEgress"
+         ],
+         "Resource": [
+          {
+           "Fn::Join": [
+            "",
+            [
+             "arn:",
+             {
+              "Ref": "AWS::Partition"
+             },
+             ":ec2:",
+             {
+              "Ref": "AWS::Region"
+             },
+             ":",
+             {
+              "Ref": "AWS::AccountId"
+             },
+             ":security-group/",
+             {
+              "Fn::GetAtt": [
+               "CodeServerVpc314E0FBC",
+               "DefaultSecurityGroup"
+              ]
+             }
+            ]
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "dd5711540f04e06aa955d7f4862fc04e8cdea464cb590dae91ed2976bb78098e.zip"
+    },
+    "Timeout": 900,
+    "MemorySize": 128,
+    "Handler": "__entrypoint__.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs18.x",
+    "Description": "Lambda function for removing all inbound/outbound rules from the VPC default security group"
+   },
+   "DependsOn": [
+    "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+   ]
+  }
+ },
+ "Parameters": {
+  "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61arm64C96584B6F00A464EAD1953AFF4B05118Parameter": {
+   "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+   "Default": "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-arm64"
+  },
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}
