@@ -31,7 +31,7 @@ import { CodeServer } from 'cdk-code-server';
 new CodeServer(this, 'CodeServer');
 ```
 
-You can customize the instance type, node.js version, and other properties:
+You can customize the instance type, vpc, and other properties:
 
 ```typescript
 import { CodeServer } from 'cdk-code-server';
