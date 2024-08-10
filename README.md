@@ -2,7 +2,6 @@
 
 This is a CDK Construct for creating a VSCode server on an Amazon Linux EC2 instance.
 
-You can access to Visual Studio Code server by browser and start development easily.
 
 [![View on Construct Hub](https://constructs.dev/badge?package=cdk-code-server)](https://constructs.dev/packages/cdk-code-server)
 
@@ -14,6 +13,13 @@ You can access to Visual Studio Code server by browser and start development eas
 [![npm downloads](https://img.shields.io/npm/dm/cdk-code-server.svg?style=flat)](https://www.npmjs.com/package/cdk-code-server)
 
 ![CDK VSCode Server Construct](./images/code-server.png)
+
+
+You can easily access Visual Studio Code Server through your browser and start development.
+
+
+In the EC2 security group's inbound rules, communication from the Internet is not allowed, ensuring secure access to the VSCode server. 
+Additionally, by passing the IAM policy to be attached to the EC2 instance as a property, you can grant appropriate permissions for AWS access within VSCode.
 
 ## Usage
 
