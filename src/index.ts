@@ -42,6 +42,13 @@ export interface CodeServerProps {
    * @default 30
    */
   readonly volumeSize?: number;
+
+  /**
+   * User data to run when launching the instance
+   *
+   * @default - No additional user data
+   */
+  readonly userData?: string[];
 }
 
 /**
@@ -106,6 +113,10 @@ export class CodeServer extends Construct {
       // Enable linger for ec2-user to allow running services without a user logged in
       'sudo loginctl enable-linger ec2-user',
     );
+
+    if (props.userData != null && props.userData.length > 0) {
+      instance.addUserData(...props.userData);
+    }
 
     instance.addToRolePolicy(
       props.policy ?? new iam.PolicyStatement({
