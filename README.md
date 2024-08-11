@@ -18,7 +18,7 @@ This is a CDK Construct for creating a VSCode server on an Amazon Linux EC2 inst
 You can easily access Visual Studio Code Server through your browser and start development.
 
 
-In the EC2 security group's inbound rules, communication from the Internet is not allowed, ensuring secure access to the VSCode server. 
+In the EC2 security group's inbound rules, communication from the Internet is not allowed, ensuring secure access to the VSCode server.
 Additionally, by passing the IAM policy to be attached to the EC2 instance as a property, you can grant appropriate permissions for AWS access within VSCode.
 
 ## Usage

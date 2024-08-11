@@ -4,6 +4,8 @@
 
 ### CodeServer <a name="CodeServer" id="cdk-code-server.CodeServer"></a>
 
+A CodeServer Construct.
+
 #### Initializers <a name="Initializers" id="cdk-code-server.CodeServer.Initializer"></a>
 
 ```typescript
@@ -119,6 +121,8 @@ The tree node.
 
 ### CodeServerProps <a name="CodeServerProps" id="cdk-code-server.CodeServerProps"></a>
 
+Properties for CodeServer construct.
+
 #### Initializer <a name="Initializer" id="cdk-code-server.CodeServerProps.Initializer"></a>
 
 ```typescript
@@ -131,11 +135,11 @@ const codeServerProps: CodeServerProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#cdk-code-server.CodeServerProps.property.cpuType">cpuType</a></code> | <code>aws-cdk-lib.aws_ec2.AmazonLinuxCpuType</code> | *No description.* |
-| <code><a href="#cdk-code-server.CodeServerProps.property.instanceType">instanceType</a></code> | <code>aws-cdk-lib.aws_ec2.InstanceType</code> | *No description.* |
-| <code><a href="#cdk-code-server.CodeServerProps.property.policy">policy</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatement</code> | *No description.* |
-| <code><a href="#cdk-code-server.CodeServerProps.property.volumeSize">volumeSize</a></code> | <code>number</code> | *No description.* |
-| <code><a href="#cdk-code-server.CodeServerProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc</code> | *No description.* |
+| <code><a href="#cdk-code-server.CodeServerProps.property.cpuType">cpuType</a></code> | <code>aws-cdk-lib.aws_ec2.AmazonLinuxCpuType</code> | The CPU type. |
+| <code><a href="#cdk-code-server.CodeServerProps.property.instanceType">instanceType</a></code> | <code>aws-cdk-lib.aws_ec2.InstanceType</code> | The instance type. |
+| <code><a href="#cdk-code-server.CodeServerProps.property.policy">policy</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatement</code> | The IAM policy to attach to the instance role. |
+| <code><a href="#cdk-code-server.CodeServerProps.property.volumeSize">volumeSize</a></code> | <code>number</code> | The size of the root volume in GiB. |
+| <code><a href="#cdk-code-server.CodeServerProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc</code> | The VPC where the instance will be deployed. |
 
 ---
 
@@ -146,6 +150,9 @@ public readonly cpuType: AmazonLinuxCpuType;
 ```
 
 - *Type:* aws-cdk-lib.aws_ec2.AmazonLinuxCpuType
+- *Default:* ARM_64
+
+The CPU type.
 
 ---
 
@@ -156,6 +163,9 @@ public readonly instanceType: InstanceType;
 ```
 
 - *Type:* aws-cdk-lib.aws_ec2.InstanceType
+- *Default:* C7g.2xlarge
+
+The instance type.
 
 ---
 
@@ -166,6 +176,9 @@ public readonly policy: PolicyStatement;
 ```
 
 - *Type:* aws-cdk-lib.aws_iam.PolicyStatement
+- *Default:* Allow all actions on all resources
+
+The IAM policy to attach to the instance role.
 
 ---
 
@@ -176,6 +189,9 @@ public readonly volumeSize: number;
 ```
 
 - *Type:* number
+- *Default:* 30
+
+The size of the root volume in GiB.
 
 ---
 
@@ -186,6 +202,9 @@ public readonly vpc: IVpc;
 ```
 
 - *Type:* aws-cdk-lib.aws_ec2.IVpc
+- *Default:* A new VPC will be created
+
+The VPC where the instance will be deployed.
 
 ---
 

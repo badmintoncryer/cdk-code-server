@@ -4,14 +4,49 @@ import * as iam from 'aws-cdk-lib/aws-iam';
 import { PreinstalledAmazonLinuxInstance, PreinstalledSoftwarePackage } from 'cdk-preinstalled-amazon-linux-ec2';
 import { Construct } from 'constructs';
 
+/**
+ * Properties for CodeServer construct
+ */
 export interface CodeServerProps {
+  /**
+   * The VPC where the instance will be deployed
+   *
+   * @default - A new VPC will be created
+   */
   readonly vpc?: ec2.IVpc;
+
+  /**
+   * The instance type
+   *
+   * @default - C7g.2xlarge
+   */
   readonly instanceType?: ec2.InstanceType;
+
+  /**
+   * The CPU type
+   *
+   * @default - ARM_64
+   */
   readonly cpuType?: ec2.AmazonLinuxCpuType;
+
+  /**
+   * The IAM policy to attach to the instance role
+   *
+   * @default - Allow all actions on all resources
+   */
   readonly policy?: iam.PolicyStatement;
+
+  /**
+   * The size of the root volume in GiB
+   *
+   * @default 30
+   */
   readonly volumeSize?: number;
 }
 
+/**
+ * A CodeServer Construct
+ */
 export class CodeServer extends Construct {
   constructor(scope: Construct, id: string, props: CodeServerProps = {}) {
     super(scope, id);
