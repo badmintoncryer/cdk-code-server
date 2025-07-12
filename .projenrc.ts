@@ -10,10 +10,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
   repositoryUrl: 'https://github.com/badmintoncryer/cdk-code-server.git',
   keywords: ['aws', 'cdk', 'ec2', 'nodejs', 'aws-cdk', 'vscode'],
   gitignore: ['*.js', '*.d.ts', '!test/.*.snapshot/**/*', '.tmp'],
-  deps: [
+  deps: [],
+  bundledDeps: [
     '@open-constructs/aws-cdk',
+  ],
+  peerDeps: [
     'cdk-preinstalled-amazon-linux-ec2',
-    'constructs@10.3.0',
   ],
   description: 'CDK Construct for a VSCode Server development environment on EC2',
   devDeps: [
@@ -24,7 +26,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   packageName: 'cdk-code-server',
   publishToPypi: {
     distName: 'cdk-code-server',
-    module: 'cdk_code-server',
+    module: 'cdk_code_server',
   },
 });
 project.projectBuild.testTask.exec(
