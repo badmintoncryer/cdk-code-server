@@ -826,10 +826,10 @@
   resolved "https://registry.yarnpkg.com/@oozcitak/util/-/util-8.3.8.tgz#10f65fe1891fd8cde4957360835e78fd1936bfdd"
   integrity sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==
 
-"@open-constructs/aws-cdk@0.0.0":
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/@open-constructs/aws-cdk/-/aws-cdk-0.0.0.tgz#4d919ed80ca138ac3ae9995c44ca6b2d8b6b73f7"
-  integrity sha512-BApqcvS96lwFiWu0rVKk5gzK8avuNgl2bCW6bJAUYJPMgmrZi2F6eZ6jcQNtIpIIr82NFuQE4aVWMRKn2WKtVw==
+"@open-constructs/aws-cdk@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@open-constructs/aws-cdk/-/aws-cdk-0.0.10.tgz#44ed146a0f93f36780811fd04de8d42ddcf55b28"
+  integrity sha512-st+znTQQGfeyv2sYK/BAtBmN/d2EzlSXLtcgHxw0F8636sthNetjFk75lI1V7BHSlHaIVjdTFwwrnv/5BRg54w==
 
 "@rtsao/scc@^1.1.0":
   version "1.1.0"
@@ -1642,10 +1642,10 @@ case@1.6.3, case@^1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdk-preinstalled-amazon-linux-ec2@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/cdk-preinstalled-amazon-linux-ec2/-/cdk-preinstalled-amazon-linux-ec2-0.0.10.tgz#9c9f57d6b0a9cf65242d257fd4ad7c0c10a65ecc"
-  integrity sha512-jpdZK5mE9A6qYK9o7PTht2b2/LbHTfrQRqLUiDO7D8ODpnIcWgj/bxJaG4N4qtxhEaQ1P09yDMkB+SdkMWC73w==
+cdk-preinstalled-amazon-linux-ec2@0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/cdk-preinstalled-amazon-linux-ec2/-/cdk-preinstalled-amazon-linux-ec2-0.0.11.tgz#2bfdfa8d493c33dc682a1d6cdbde567f18a5e0b4"
+  integrity sha512-Ce9G2hg9Fw3ZpvyUstboVswrQrY5RF3m7kXr0cXps+EcZ0yLKtyk5EjCsrKxz4XRHfsVJ2TMCgnlc3dc1J8PKQ==
 
 chalk@^2.4.2:
   version "2.4.2"
@@ -1817,10 +1817,10 @@ concat-stream@^2.0.0:
     readable-stream "^3.0.2"
     typedarray "^0.0.6"
 
-constructs@10.3.0:
-  version "10.3.0"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.3.0.tgz#4c246fce9cf8e77711ad45944e9fbd41f1501965"
-  integrity sha512-vbK8i3rIb/xwZxSpTjz3SagHn1qq9BChLEfy5Hf6fB3/2eFbrwt2n9kHwQcS0CPTRBesreeAcsJfMq2229FnbQ==
+constructs@10.0.5:
+  version "10.0.5"
+  resolved "https://registry.yarnpkg.com/constructs/-/constructs-10.0.5.tgz#48c0402f1b98bbf5664efff74a8015e6e8a9f41e"
+  integrity sha512-IwOwekzrASFC3qt4ozCtV09rteAIAesuCGsW0p+uBfqHd2XcvA5CXqJjgf4eUqm6g8e/noXlVCMDWwC8GaLtrg==
 
 constructs@^10.0.0:
   version "10.4.2"
