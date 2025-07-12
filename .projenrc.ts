@@ -4,7 +4,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorAddress: 'malaysia.cryer@gmail.com',
   cdkVersion: '2.143.0',
   defaultReleaseBranch: 'main',
-  jsiiVersion: '~5.4.0',
+  jsiiVersion: '~5.8.0',
   name: 'cdk-code-server',
   projenrcTs: true,
   repositoryUrl: 'https://github.com/badmintoncryer/cdk-code-server.git',
