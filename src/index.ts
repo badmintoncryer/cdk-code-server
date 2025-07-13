@@ -49,6 +49,16 @@ export interface CodeServerProps {
    * @default - No additional user data
    */
   readonly userData?: string[];
+
+  /**
+   * Whether to use EC2 instance connect endpoint for instance access.
+   *
+   * If set to true, it will create an EC2 Instance Connect Endpoint in the VPC.
+   * You can access the instance using either EC2 Instance Connect or SSM Session Manager.
+   *
+   * @default false - Uses only SSM Session Manager for instance access
+   */
+  readonly useInstanceConnectEndpoint?: boolean;
 }
 
 /**
@@ -125,15 +135,18 @@ export class CodeServer extends Construct {
       }),
     );
 
-    const eicEndpoint = new ocf.aws_ec2.InstanceConnectEndpoint(
-      this,
-      'InstanceConnectEndpoint',
-      {
-        vpc,
-      },
-    );
+    // Create EC2 Instance Connect Endpoint only if SSM is not enabled
+    if (props.useInstanceConnectEndpoint) {
+      const eicEndpoint = new ocf.aws_ec2.InstanceConnectEndpoint(
+        this,
+        'InstanceConnectEndpoint',
+        {
+          vpc,
+        },
+      );
 
-    // Opening Security Group from EIC Endpoint to EC2 Instance
-    eicEndpoint.connections.allowTo(instance, ec2.Port.tcp(22));
+      // Opening Security Group from EIC Endpoint to EC2 Instance
+      eicEndpoint.connections.allowTo(instance, ec2.Port.tcp(22));
+    }
   }
 }
