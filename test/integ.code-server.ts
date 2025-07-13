@@ -8,7 +8,13 @@ class TestStack extends Stack {
   constructor(scope: App, id: string, props?: StackProps) {
     super(scope, id, props);
 
+    // default settings
     new CodeServer(this, 'CodeServer');
+
+    // with EC2 Instance Connect Endpoint
+    new CodeServer(this, 'CodeServerWithEicEndpoint', {
+      useInstanceConnectEndpoint: true,
+    });
   }
 }
 
