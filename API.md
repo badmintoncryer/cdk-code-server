@@ -124,6 +124,7 @@ const codeServerProps: CodeServerProps = { ... }
 | <code><a href="#cdk-code-server.CodeServerProps.property.cpuType">cpuType</a></code> | <code>aws-cdk-lib.aws_ec2.AmazonLinuxCpuType</code> | The CPU type. |
 | <code><a href="#cdk-code-server.CodeServerProps.property.instanceType">instanceType</a></code> | <code>aws-cdk-lib.aws_ec2.InstanceType</code> | The instance type. |
 | <code><a href="#cdk-code-server.CodeServerProps.property.policy">policy</a></code> | <code>aws-cdk-lib.aws_iam.PolicyStatement</code> | The IAM policy to attach to the instance role. |
+| <code><a href="#cdk-code-server.CodeServerProps.property.useInstanceConnectEndpoint">useInstanceConnectEndpoint</a></code> | <code>boolean</code> | Whether to use EC2 instance connect endpoint for instance access. |
 | <code><a href="#cdk-code-server.CodeServerProps.property.userData">userData</a></code> | <code>string[]</code> | User data to run when launching the instance. |
 | <code><a href="#cdk-code-server.CodeServerProps.property.volumeSize">volumeSize</a></code> | <code>number</code> | The size of the root volume in GiB. |
 | <code><a href="#cdk-code-server.CodeServerProps.property.vpc">vpc</a></code> | <code>aws-cdk-lib.aws_ec2.IVpc</code> | The VPC where the instance will be deployed. |
@@ -166,6 +167,22 @@ public readonly policy: PolicyStatement;
 - *Default:* Allow all actions on all resources
 
 The IAM policy to attach to the instance role.
+
+---
+
+##### `useInstanceConnectEndpoint`<sup>Optional</sup> <a name="useInstanceConnectEndpoint" id="cdk-code-server.CodeServerProps.property.useInstanceConnectEndpoint"></a>
+
+```typescript
+public readonly useInstanceConnectEndpoint: boolean;
+```
+
+- *Type:* boolean
+- *Default:* false - Uses only SSM Session Manager for instance access
+
+Whether to use EC2 instance connect endpoint for instance access.
+
+If set to true, it will create an EC2 Instance Connect Endpoint in the VPC.
+You can access the instance using either EC2 Instance Connect or SSM Session Manager.
 
 ---
 
