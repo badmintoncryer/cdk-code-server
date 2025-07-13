@@ -1642,11 +1642,6 @@ case@1.6.3, case@^1.6.3:
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
   integrity sha512-mzDSXIPaFwVDvZAHqZ9VlbyF4yyXRuX6IvB06WvPYkqJVO24kX1PPhv9bfpKNFZyxYFmmgo03HUiD8iklmJYRQ==
 
-cdk-preinstalled-amazon-linux-ec2@0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/cdk-preinstalled-amazon-linux-ec2/-/cdk-preinstalled-amazon-linux-ec2-0.0.11.tgz#2bfdfa8d493c33dc682a1d6cdbde567f18a5e0b4"
-  integrity sha512-Ce9G2hg9Fw3ZpvyUstboVswrQrY5RF3m7kXr0cXps+EcZ0yLKtyk5EjCsrKxz4XRHfsVJ2TMCgnlc3dc1J8PKQ==
-
 chalk@^2.4.2:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.2.tgz#cd42541677a54333cf541a49108c1432b44c9424"

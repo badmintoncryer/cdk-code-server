@@ -1,8 +1,8 @@
 import * as ocf from '@open-constructs/aws-cdk';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import * as iam from 'aws-cdk-lib/aws-iam';
-import { PreinstalledAmazonLinuxInstance, PreinstalledSoftwarePackage } from 'cdk-preinstalled-amazon-linux-ec2';
 import { Construct } from 'constructs';
+import { PreinstalledAmazonLinuxInstance, PreinstalledSoftwarePackage } from './instance';
 
 /**
  * Properties for CodeServer construct

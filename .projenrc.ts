@@ -14,9 +14,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   bundledDeps: [
     '@open-constructs/aws-cdk',
   ],
-  peerDeps: [
-    'cdk-preinstalled-amazon-linux-ec2',
-  ],
+  peerDeps: [],
   description: 'CDK Construct for a VSCode Server development environment on EC2',
   devDeps: [
     '@aws-cdk/integ-runner@2.143.0-alpha.0',
