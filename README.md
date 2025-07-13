@@ -14,9 +14,7 @@ This is a CDK Construct for creating a VSCode server on an Amazon Linux EC2 inst
 
 ![CDK VSCode Server Construct](./images/code-server.png)
 
-
 You can easily access Visual Studio Code Server through your browser and start development.
-
 
 In the EC2 security group's inbound rules, communication from the Internet is not allowed, ensuring secure access to the VSCode server.
 Additionally, by passing the IAM policy to be attached to the EC2 instance as a property, you can grant appropriate permissions for AWS access within VSCode.
@@ -67,17 +65,17 @@ new CodeServer(this, 'CodeServer', {
 
 ## Setup VSCode Server
 
-After the stack is deployed, you can access to the server via EC2 instance connect endpoint(EIC endpoint) and create connection to the VSCode server:
+After the stack is deployed, you can access the server via AWS Systems Manager (SSM) Session Manager by default and start the VSCode server:
 
-### Access to the EC2 instance
+### Access to the EC2 instance (Default: SSM)
 
-Access the EC2 management console in the AWS Console, and connect to your EC2 instance via the EIC Endpoint.
+1. In the AWS Console, go to the EC2 Instances page and select your instance.
+2. Click the "Connect" button, choose "Session Manager", and click "Connect".
+3. Once connected, switch to the ec2-user account:
 
-Select the Instance ID > Connect > EC2 Instance Connect > Connect using EC2 Instance Connect Endpoint > Connect
-
-If the following screen is displayed, you're all set.
-
-![EC2 Instance Connect](./images/console.png)
+```sh
+sudo su --login ec2-user
+```
 
 ### Start the VSCode server
 
@@ -119,3 +117,17 @@ At this point, the GitHub authentication screen may appear again, so press Autho
 Once you open the terminal, you’re all set.
 
 ![VSCode](./images/vscode.png)
+
+---
+
+### (Option) Access via EC2 Instance Connect Endpoint (EIC Endpoint)
+
+If the `useInstanceConnectEndpoint` option is set to true, you can connect via the EC2 Instance Connect Endpoint.
+
+1. In the AWS Console, go to the EC2 Instances page and select your instance.
+2. Click the "Connect" button, choose "EC2 Instance Connect", then select "Connect using EC2 Instance Connect Endpoint", and click "Connect".
+3. Once connected, you will see a screen similar to the following:
+
+![EC2 Instance Connect](./images/console.png)
+
+4. Follow the same steps as in the SSM section to start the VSCode server and connect via tunnel.

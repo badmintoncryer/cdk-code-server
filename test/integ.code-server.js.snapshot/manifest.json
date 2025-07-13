@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/359b6db38665c0672fc6a912dc86043b0718d993972bfdd6e7ca1fda2b57ff6b.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/19ce5040d1c28162c65528c3441bf140214e000d1d1b645af2d3bbaf2c888059.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -88,12 +88,6 @@
             "data": "CodeServerInstanceInstanceSecurityGroup0BB80B50"
           }
         ],
-        "/testStack/CodeServer/Instance/InstanceSecurityGroup/from testStackCodeServerInstanceConnectEndpointSecurityGroupD91462D8:22": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CodeServerInstanceInstanceSecurityGroupfromtestStackCodeServerInstanceConnectEndpointSecurityGroupD91462D8222BE456A9"
-          }
-        ],
         "/testStack/CodeServer/Instance/InstanceRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
@@ -118,24 +112,6 @@
             "data": "CodeServerInstanceE7884176"
           }
         ],
-        "/testStack/CodeServer/InstanceConnectEndpoint/SecurityGroup": [
-          {
-            "type": "aws:cdk:warning",
-            "data": "Ignoring Egress rule since 'allowAllOutbound' is set to true; To add customized rules, set allowAllOutbound=false on the SecurityGroup [ack: @aws-cdk/aws-ec2:ipv4IgnoreEgressRule]"
-          }
-        ],
-        "/testStack/CodeServer/InstanceConnectEndpoint/SecurityGroup/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CodeServerInstanceConnectEndpointSecurityGroupB1118A4F"
-          }
-        ],
-        "/testStack/CodeServer/InstanceConnectEndpoint/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "CodeServerInstanceConnectEndpoint69CDE36D"
-          }
-        ],
         "/testStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role": [
           {
             "type": "aws:cdk:logicalId",
@@ -152,6 +128,108 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61arm64C96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Vpc/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointVpc0EA40404"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Vpc/PublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointVpcPublicSubnet1SubnetB0FE565F"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Vpc/PublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointVpcPublicSubnet1RouteTable76688FD5"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Vpc/PublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointVpcPublicSubnet1RouteTableAssociation27905DE9"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Vpc/PublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointVpcPublicSubnet1DefaultRoute842720CD"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Vpc/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointVpcIGW5D49235C"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Vpc/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointVpcVPCGW21AD4142"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Vpc/RestrictDefaultSecurityGroupCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointVpcRestrictDefaultSecurityGroupCustomResource96F6E76C"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Instance/InstanceSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointInstanceInstanceSecurityGroup0366EF96"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Instance/InstanceSecurityGroup/from testStackCodeServerWithEicEndpointInstanceConnectEndpointSecurityGroup13EA0E66:22": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointInstanceInstanceSecurityGroupfromtestStackCodeServerWithEicEndpointInstanceConnectEndpointSecurityGroup13EA0E66228998E29C"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Instance/InstanceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointInstanceInstanceRoleC8BD3632"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Instance/InstanceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointInstanceInstanceRoleDefaultPolicyD0A3CABE"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Instance/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointInstanceInstanceProfile9540F2B1"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/Instance/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointInstance785EE0BE"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/InstanceConnectEndpoint/SecurityGroup": [
+          {
+            "type": "aws:cdk:warning",
+            "data": "Ignoring Egress rule since 'allowAllOutbound' is set to true; To add customized rules, set allowAllOutbound=false on the SecurityGroup [ack: @aws-cdk/aws-ec2:ipv4IgnoreEgressRule]"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/InstanceConnectEndpoint/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointInstanceConnectEndpointSecurityGroup6253432E"
+          }
+        ],
+        "/testStack/CodeServerWithEicEndpoint/InstanceConnectEndpoint/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CodeServerWithEicEndpointInstanceConnectEndpointDB4E9EA1"
           }
         ],
         "/testStack/BootstrapVersion": [
