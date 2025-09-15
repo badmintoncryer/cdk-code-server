@@ -23,9 +23,12 @@ const project = new awscdk.AwsCdkConstructLibrary({
   ],
   releaseToNpm: true,
   packageName: 'cdk-code-server',
+  npmTrustedPublishing: true,
+  workflowNodeVersion: '24',
   publishToPypi: {
     distName: 'cdk-code-server',
     module: 'cdk_code_server',
+    trustedPublishing: true,
   },
 });
 project.projectBuild.testTask.exec(
