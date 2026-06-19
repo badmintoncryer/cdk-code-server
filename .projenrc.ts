@@ -2,7 +2,7 @@ import { awscdk } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'Kazuho CryerShinozuka',
   authorAddress: 'malaysia.cryer@gmail.com',
-  cdkVersion: '2.143.0',
+  cdkVersion: '2.168.0',
   defaultReleaseBranch: 'main',
   jsiiVersion: '~5.8.0',
   majorVersion: 1,
@@ -18,8 +18,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   peerDeps: [],
   description: 'CDK Construct for a VSCode Server development environment on EC2',
   devDeps: [
-    '@aws-cdk/integ-runner@2.143.0-alpha.0',
-    '@aws-cdk/integ-tests-alpha@2.143.0-alpha.0',
+    '@aws-cdk/integ-runner@2.168.0-alpha.0',
+    '@aws-cdk/integ-tests-alpha@2.168.0-alpha.0',
   ],
   releaseToNpm: true,
   packageName: 'cdk-code-server',

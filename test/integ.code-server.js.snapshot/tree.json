@@ -36,7 +36,7 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.CfnVPC",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "PublicSubnet1": {
@@ -80,7 +80,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "Acl": {
@@ -88,7 +88,7 @@
                         "path": "testStack/CodeServer/Vpc/PublicSubnet1/Acl",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "RouteTable": {
@@ -110,7 +110,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "RouteTableAssociation": {
@@ -129,7 +129,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "DefaultRoute": {
@@ -149,13 +149,13 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.PublicSubnet",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "IGW": {
@@ -174,7 +174,7 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.CfnInternetGateway",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "VPCGW": {
@@ -193,7 +193,7 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.CfnVPCGatewayAttachment",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "RestrictDefaultSecurityGroupCustomResource": {
@@ -205,19 +205,19 @@
                         "path": "testStack/CodeServer/Vpc/RestrictDefaultSecurityGroupCustomResource/Default",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CustomResource",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_ec2.Vpc",
-                  "version": "2.143.0"
+                  "version": "2.168.0"
                 }
               },
               "Instance": {
@@ -255,13 +255,13 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "InstanceRole": {
@@ -273,7 +273,7 @@
                         "path": "testStack/CodeServer/Instance/InstanceRole/ImportInstanceRole",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "Resource": {
@@ -318,7 +318,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "DefaultPolicy": {
@@ -351,19 +351,19 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                              "version": "2.143.0"
+                              "version": "2.168.0"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.Policy",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_iam.Role",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "InstanceProfile": {
@@ -381,7 +381,7 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_iam.CfnInstanceProfile",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "Resource": {
@@ -439,19 +439,27 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.CfnInstance",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_ec2.Instance",
-                  "version": "2.143.0"
+                  "version": "2.168.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "constructs.Construct",
-              "version": "10.0.5"
+              "version": "10.5.1"
+            }
+          },
+          "LatestNodeRuntimeMap": {
+            "id": "LatestNodeRuntimeMap",
+            "path": "testStack/LatestNodeRuntimeMap",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnMapping",
+              "version": "2.168.0"
             }
           },
           "Custom::VpcRestrictDefaultSGCustomResourceProvider": {
@@ -463,7 +471,7 @@
                 "path": "testStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Staging",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.AssetStaging",
-                  "version": "2.143.0"
+                  "version": "2.168.0"
                 }
               },
               "Role": {
@@ -471,7 +479,7 @@
                 "path": "testStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnResource",
-                  "version": "2.143.0"
+                  "version": "2.168.0"
                 }
               },
               "Handler": {
@@ -479,13 +487,13 @@
                 "path": "testStack/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler",
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.CfnResource",
-                  "version": "2.143.0"
+                  "version": "2.168.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "aws-cdk-lib.CustomResourceProviderBase",
-              "version": "2.143.0"
+              "version": "2.168.0"
             }
           },
           "SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
@@ -493,7 +501,7 @@
             "path": "testStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnParameter",
-              "version": "2.143.0"
+              "version": "2.168.0"
             }
           },
           "SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118": {
@@ -501,7 +509,7 @@
             "path": "testStack/SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118",
             "constructInfo": {
               "fqn": "aws-cdk-lib.Resource",
-              "version": "2.143.0"
+              "version": "2.168.0"
             }
           },
           "CodeServerWithEicEndpoint": {
@@ -532,7 +540,7 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.CfnVPC",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "PublicSubnet1": {
@@ -576,7 +584,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_ec2.CfnSubnet",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "Acl": {
@@ -584,7 +592,7 @@
                         "path": "testStack/CodeServerWithEicEndpoint/Vpc/PublicSubnet1/Acl",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "RouteTable": {
@@ -606,7 +614,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_ec2.CfnRouteTable",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "RouteTableAssociation": {
@@ -625,7 +633,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_ec2.CfnSubnetRouteTableAssociation",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "DefaultRoute": {
@@ -645,13 +653,13 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.PublicSubnet",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "IGW": {
@@ -670,7 +678,7 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.CfnInternetGateway",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "VPCGW": {
@@ -689,7 +697,7 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.CfnVPCGatewayAttachment",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "RestrictDefaultSecurityGroupCustomResource": {
@@ -701,19 +709,19 @@
                         "path": "testStack/CodeServerWithEicEndpoint/Vpc/RestrictDefaultSecurityGroupCustomResource/Default",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.CfnResource",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CustomResource",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_ec2.Vpc",
-                  "version": "2.143.0"
+                  "version": "2.168.0"
                 }
               },
               "Instance": {
@@ -751,7 +759,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "from testStackCodeServerWithEicEndpointInstanceConnectEndpointSecurityGroup13EA0E66:22": {
@@ -780,13 +788,13 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroupIngress",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "InstanceRole": {
@@ -798,7 +806,7 @@
                         "path": "testStack/CodeServerWithEicEndpoint/Instance/InstanceRole/ImportInstanceRole",
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.Resource",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "Resource": {
@@ -843,7 +851,7 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.CfnRole",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       },
                       "DefaultPolicy": {
@@ -876,19 +884,19 @@
                             },
                             "constructInfo": {
                               "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
-                              "version": "2.143.0"
+                              "version": "2.168.0"
                             }
                           }
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_iam.Policy",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_iam.Role",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "InstanceProfile": {
@@ -906,7 +914,7 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_iam.CfnInstanceProfile",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "Resource": {
@@ -964,13 +972,13 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.CfnInstance",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.aws_ec2.Instance",
-                  "version": "2.143.0"
+                  "version": "2.168.0"
                 }
               },
               "InstanceConnectEndpoint": {
@@ -1002,13 +1010,13 @@
                         },
                         "constructInfo": {
                           "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
-                          "version": "2.143.0"
+                          "version": "2.168.0"
                         }
                       }
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "Resource": {
@@ -1032,19 +1040,19 @@
                     },
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.aws_ec2.CfnInstanceConnectEndpoint",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "@open-constructs/aws-cdk.aws_ec2.InstanceConnectEndpoint",
-                  "version": "0.0.10"
+                  "version": "0.1.2"
                 }
               }
             },
             "constructInfo": {
               "fqn": "constructs.Construct",
-              "version": "10.0.5"
+              "version": "10.5.1"
             }
           },
           "BootstrapVersion": {
@@ -1052,7 +1060,7 @@
             "path": "testStack/BootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnParameter",
-              "version": "2.143.0"
+              "version": "2.168.0"
             }
           },
           "CheckBootstrapVersion": {
@@ -1060,13 +1068,13 @@
             "path": "testStack/CheckBootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnRule",
-              "version": "2.143.0"
+              "version": "2.168.0"
             }
           }
         },
         "constructInfo": {
           "fqn": "aws-cdk-lib.Stack",
-          "version": "2.143.0"
+          "version": "2.168.0"
         }
       },
       "Test": {
@@ -1082,7 +1090,7 @@
                 "path": "Test/DefaultTest/Default",
                 "constructInfo": {
                   "fqn": "constructs.Construct",
-                  "version": "10.0.5"
+                  "version": "10.5.1"
                 }
               },
               "DeployAssert": {
@@ -1094,7 +1102,7 @@
                     "path": "Test/DefaultTest/DeployAssert/BootstrapVersion",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnParameter",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   },
                   "CheckBootstrapVersion": {
@@ -1102,25 +1110,25 @@
                     "path": "Test/DefaultTest/DeployAssert/CheckBootstrapVersion",
                     "constructInfo": {
                       "fqn": "aws-cdk-lib.CfnRule",
-                      "version": "2.143.0"
+                      "version": "2.168.0"
                     }
                   }
                 },
                 "constructInfo": {
                   "fqn": "aws-cdk-lib.Stack",
-                  "version": "2.143.0"
+                  "version": "2.168.0"
                 }
               }
             },
             "constructInfo": {
               "fqn": "@aws-cdk/integ-tests-alpha.IntegTestCase",
-              "version": "2.143.0-alpha.0"
+              "version": "2.168.0-alpha.0"
             }
           }
         },
         "constructInfo": {
           "fqn": "@aws-cdk/integ-tests-alpha.IntegTest",
-          "version": "2.143.0-alpha.0"
+          "version": "2.168.0-alpha.0"
         }
       },
       "Tree": {
@@ -1128,13 +1136,13 @@
         "path": "Tree",
         "constructInfo": {
           "fqn": "constructs.Construct",
-          "version": "10.0.5"
+          "version": "10.5.1"
         }
       }
     },
     "constructInfo": {
       "fqn": "aws-cdk-lib.App",
-      "version": "2.143.0"
+      "version": "2.168.0"
     }
   }
 }
