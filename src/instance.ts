@@ -86,7 +86,10 @@ EOF`,
       }
       if (preinstalledSoftware.packages?.includes(PreinstalledSoftwarePackage.DOCKER)) {
         userData.addCommands(
-          'sudo amazon-linux-extras install docker',
+          // Amazon Linux 2023 (the default image) uses dnf and has docker in its
+          // default repositories, while Amazon Linux 2 installs docker via
+          // amazon-linux-extras. Pick the right command at runtime so both work.
+          'if command -v dnf >/dev/null 2>&1; then sudo dnf install -y docker; else sudo amazon-linux-extras install -y docker; fi',
           'sudo systemctl start docker',
           'sudo systemctl enable docker',
           'sudo usermod -a -G docker ec2-user',
